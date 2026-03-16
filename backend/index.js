@@ -6,7 +6,7 @@ import multer from 'multer';
 
 // 2. Inicializamos el servidor
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // 3. Configuraciones básicas
 app.use(cors());
