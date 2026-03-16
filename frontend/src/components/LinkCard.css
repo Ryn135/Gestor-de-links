@@ -1,0 +1,139 @@
+.link-card {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 16px;
+    background-color: var(--bg-card);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* Espacio entre los elementos de la tarjeta */
+}
+
+/* Efecto hover estilo Notion */
+.link-card:hover {
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+.link-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-category {
+    font-size: 12px;
+    background-color: var(--bg-sidebar);
+    color: var(--text-secondary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.icon-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-hover);
+    border-radius: 4px;
+}
+
+.link-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    /* Si el título es muy largo, cortarlo con puntos suspensivos */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-url {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    /* Cortar la URL si es muy larga */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-url:hover {
+    text-decoration: underline;
+    color: var(--text-primary);
+}
+
+/* --- NUEVOS ESTILOS PARA EL LOGO --- */
+.link-card-body {
+    display: flex;
+    align-items: center;
+    /* Alinea el logo y el texto al centro verticalmente */
+    gap: 12px;
+    /* Separación entre el logo y el texto */
+    margin: 4px 0;
+    /* Un poco de margen arriba y abajo */
+}
+
+.link-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    background-color: var(--bg-sidebar);
+    /* Fondo por si la imagen tarda en cargar */
+    padding: 2px;
+}
+
+/* --- NUEVOS ESTILOS PARA EL MENÚ (3 PUNTOS) --- */
+.menu-container {
+    position: relative;
+    /* Necesario para posicionar el dropdown justo debajo del botón */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    min-width: 140px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+
+.dropdown-item {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: var(--bg-hover);
+}
+
+.delete-item {
+    color: #e03e3e; /* Mantener rojo porque es peligroso */
+}
+
+.delete-item:hover {
+    background-color: rgba(224, 62, 62, 0.1);
+}

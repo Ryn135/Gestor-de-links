@@ -1,0 +1,30 @@
+.app-container {
+  display: flex;
+  /* Poner el sidebar y el main uno al lado del otro */
+  height: 100vh;
+  /* Toda la altura de la página */
+}
+
+.main-content {
+  flex: 1;
+  /* Ocupar todo el espacio restante que deja el sidebar */
+  padding: 40px 60px;
+  /* Darle espacio de respiración al texto */
+  overflow-y: auto;
+  /* Si hay muchos links, que se pueda hacer scroll aquí */
+}
+
+.main-content h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+/* Añadir al final de App.css */
+.links-grid {
+  display: grid;
+  /* Esto crea columnas que se adaptan automáticamente. Mínimo 250px, máximo lo que haya */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  /* Espacio entre las tarjetas */
+  margin-top: 24px;
+}

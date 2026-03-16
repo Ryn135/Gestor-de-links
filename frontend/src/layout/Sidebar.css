@@ -1,0 +1,65 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    /* Quitar los puntitos de la lista */
+}
+
+.sidebar-nav li {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-nav li:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.sidebar-nav li.active {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    /* Empujar el botón hasta abajo */
+}
+
+.new-link-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    color: var(--text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.new-link-btn:hover {
+    background-color: #efedea;
+}
