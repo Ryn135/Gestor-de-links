@@ -34,8 +34,15 @@ function App() {
   useEffect(() => {
     // Le tocamos la puerta al servidor Node.js (Local o Nube)
     fetch(`${API_URL}/api/links`)
-      .then(respuesta => respuesta.json()) // Transformamos la respuesta a JSON
-      .then(datos => setLinks(datos)) // Guardamos esos datos en nuestra "memoria" de React
+      .then(respuesta => {
+        if (!respuesta.ok) throw new Error(`Error del servidor: ${respuesta.status}`);
+        return respuesta.json();
+      })
+      .then(datos => {
+        // Nos aseguramos de que sea un array antes de guardarlo
+        if (Array.isArray(datos)) setLinks(datos);
+        else console.error('El servidor no devolvió un array:', datos);
+      })
       .catch(error => console.error('Error cargando los links rápidos:', error));
   }, []); // Los corchetes vacíos [] significan "haz esto SOLO UNA VEZ al cargar la app"
   // 4. MODIFICADO: Ahora enviamos el nuevo link al backend antes de mostrarlo
